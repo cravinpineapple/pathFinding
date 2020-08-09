@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "N:\\Programming\\Visual Studio\\dev\\SPath\\SPath\\SPath\\SPath.csproj",
+      "projectUniqueName": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj",
       "projectName": "SPath",
-      "projectPath": "N:\\Programming\\Visual Studio\\dev\\SPath\\SPath\\SPath\\SPath.csproj",
+      "projectPath": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj",
       "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "N:\\Programming\\Visual Studio\\dev\\SPath\\SPath\\SPath\\obj\\",
+      "outputPath": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6QTfiK2V08ONTsnwZETl/evvivOd67hSizDMYooQRYnjjmVAoBTPTZKILGYWo0JBPTX98p6htGbn/wCDv6yvtQ==",
+  "dgSpecHash": "xpZvO2c5ZFA0/DF//s0tu/2hRCG04ZNAxsyur+wRU0Vr4zI5LThxfoM6HOOUjJ4S9QvA5k7c/C7+OJkB+o3S8Q==",
   "success": true,
-  "projectFilePath": "N:\\Programming\\Visual Studio\\dev\\SPath\\SPath\\SPath\\SPath.csproj",
+  "projectFilePath": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

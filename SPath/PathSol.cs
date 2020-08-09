@@ -178,7 +178,7 @@ namespace SPath
 
         bool enqueueDirection(List<Cell> cellQ, int ci, int cj, int[] prevCords)
         {
-
+            return false;
         }
 
         public void solve()

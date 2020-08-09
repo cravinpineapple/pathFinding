@@ -11,3 +11,16 @@ N:\Programming\Visual Studio\dev\SPath\SPath\SPath\obj\Debug\netcoreapp3.1\SPath
 N:\Programming\Visual Studio\dev\SPath\SPath\SPath\obj\Debug\netcoreapp3.1\SPath.dll
 N:\Programming\Visual Studio\dev\SPath\SPath\SPath\obj\Debug\netcoreapp3.1\SPath.pdb
 N:\Programming\Visual Studio\dev\SPath\SPath\SPath\obj\Debug\netcoreapp3.1\SPath.genruntimeconfig.cache
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.csprojAssemblyReference.cache
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.AssemblyInfoInputs.cache
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.AssemblyInfo.cs
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.csproj.CoreCompileInputs.cache
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.dll
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.pdb
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.exe
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.deps.json
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.runtimeconfig.json
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.runtimeconfig.dev.json
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.dll
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\bin\Debug\netcoreapp3.1\SPath.pdb
+N:\Programming\Visual Studio\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.genruntimeconfig.cache
