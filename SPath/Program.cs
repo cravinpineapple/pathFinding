@@ -13,6 +13,9 @@ namespace SPath
             test.setEnd(5, 5);
 
             test.printcMaze();
+            test.solve();
+            Console.WriteLine();
+            test.printcMaze();
         }
     }
 }
