@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj": {}
+    "C:\\Users\\noahs\\Documents\\git_repos\\pathFinding\\SPath\\SPath.csproj": {}
   },
   "projects": {
-    "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj": {
+    "C:\\Users\\noahs\\Documents\\git_repos\\pathFinding\\SPath\\SPath.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj",
+        "projectUniqueName": "C:\\Users\\noahs\\Documents\\git_repos\\pathFinding\\SPath\\SPath.csproj",
         "projectName": "SPath",
-        "projectPath": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\SPath.csproj",
-        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "N:\\Programming\\Visual Studio\\git_repos\\pathFinding\\SPath\\obj\\",
+        "projectPath": "C:\\Users\\noahs\\Documents\\git_repos\\pathFinding\\SPath\\SPath.csproj",
+        "packagesPath": "C:\\Users\\noahs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\noahs\\Documents\\git_repos\\pathFinding\\SPath\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\noahs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
