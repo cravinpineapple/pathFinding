@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Text;
 
 namespace SPath
@@ -94,6 +95,7 @@ namespace SPath
                     if (cMaze[i, j].visited)
                     { 
                         Console.Write("V");
+                        Console.Write("   ");
                         continue;
                     }
 
@@ -171,9 +173,22 @@ namespace SPath
             maze[ei, ej] = 'E';
         }
 
-        bool isValidCoords(int i, int j)
+        // checks if coords are within bounds and the cell is not a wall.
+        bool isValidCell(int i, int j)
         {
-            return (i < defHeight && i >= 0) && (j < defWidth && j >= 0) ? true : false;
+            //return (i < defHeight && i >= 0) && (j < defWidth && j >= 0) ? true : false;
+
+            // checks coords
+            if ((i < defHeight && i >= 0) && (j < defWidth && j >= 0))
+            {
+                // checks if wall
+                if (cMaze[i, j].isWall)
+                    return false;
+                else
+                    return true;
+            }
+            else
+                return false;
         }
 
         bool enqueueDirection(List<Cell> cellQ, int ci, int cj, int[] prevCords)
@@ -183,28 +198,56 @@ namespace SPath
 
         public void solve()
         {
+            //List ensures we will branch from each cell
             List<Cell> cellL = new List<Cell>();
 
-            // tracks 
+            // tracks next cell we need to branch from
             int pos = 0;
 
             cellL.Add(cMaze[bi, bj]);
-            int[] prevCoords = new int[2] { bi, bj };
+            //int[] prevCoords = new int[2] { bi, bj };
 
-            bool is_end = false;
+            bool isEnd = false;
 
-            while (!is_end)
+            while (!isEnd)
             {
                 Cell currentCell = cellL[pos];
-                // up
-                
-                // right
+                // branch up
+                isEnd = branch(currentCell, currentCell.i - 1, currentCell.j, ref cellL);
 
-                // left
+                // branch down
+                isEnd = branch(currentCell, currentCell.i + 1, currentCell.j, ref cellL);
 
-                // down
+                // branch left
+                isEnd = branch(currentCell, currentCell.i, currentCell.j - 1, ref cellL);
 
+                // branch right
+                isEnd = branch(currentCell, currentCell.i, currentCell.j + 1, ref cellL);
+
+                pos++;
             }
+        }
+
+        bool branch(Cell currentCell, int nextI, int nextJ, ref List<Cell> cellL)
+        {
+            if (isValidCell(nextI, nextJ))
+            {
+                // pushing next cell to branch from in queue
+                cellL.Add(cMaze[nextI, nextJ]);
+
+                // updates visited and remembers the previous cell it branched from
+                cMaze[nextI, nextJ].visited = true;
+                cMaze[nextI, nextJ].prevCell_i = currentCell.i;
+                cMaze[nextI, nextJ].prevCell_j = currentCell.j;
+
+                // check if end is found
+                if (cMaze[nextI, nextJ].isEnd)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
     }
 }
