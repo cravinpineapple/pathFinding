@@ -12,7 +12,7 @@ namespace SPath
         public bool isOpen;
         public bool visited;
         public bool pathFound;
-        int prevCell_i, prevCell_j;
+        public int prevCell_i, prevCell_j;
         public int i, j;
 
         public Cell()

@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace SPath
@@ -28,6 +30,7 @@ namespace SPath
         int height, width;
         bool reached_end = false;
         int pathSize;
+        List<Cell> pathSolution = new List<Cell>();
         bool is_end = false;
 
 
@@ -91,9 +94,10 @@ namespace SPath
             {
                 for (int j = 0; j < cMaze.GetLength(1); j++)
                 {
-                    if (cMaze[i, j].visited)
+                    if (cMaze[i, j].pathFound)
                     { 
-                        Console.Write("V");
+                        Console.Write("@");
+                        Console.Write("   ");
                         continue;
                     }
 
@@ -171,40 +175,121 @@ namespace SPath
             maze[ei, ej] = 'E';
         }
 
-        bool isValidCoords(int i, int j)
+        // checks if coords are within bounds and the cell is not a wall.
+        bool isValidCell(int i, int j)
         {
-            return (i < defHeight && i >= 0) && (j < defWidth && j >= 0) ? true : false;
-        }
+            //return (i < defHeight && i >= 0) && (j < defWidth && j >= 0) ? true : false;
 
-        bool enqueueDirection(List<Cell> cellQ, int ci, int cj, int[] prevCords)
-        {
-            return false;
+            // checks coords
+            if ((i < defHeight && i >= 0) && (j < defWidth && j >= 0))
+            {
+                // checks that cell has not been visited or that it is not a wall
+                if (cMaze[i, j].visited || cMaze[i, j].isWall)
+                    return false;
+                else
+                    return true;
+
+            }
+            else
+                return false;
         }
 
         public void solve()
         {
+            //List ensures we will branch from each cell
             List<Cell> cellL = new List<Cell>();
 
-            // tracks 
+            // tracks next cell we need to branch from
             int pos = 0;
 
             cellL.Add(cMaze[bi, bj]);
-            int[] prevCoords = new int[2] { bi, bj };
+            cMaze[bi, bj].visited = true;
+            //int[] prevCoords = new int[2] { bi, bj };
 
-            bool is_end = false;
+            bool isEnd = false;
 
-            while (!is_end)
+            while (!isEnd)
             {
                 Cell currentCell = cellL[pos];
-                // up
-                
-                // right
 
-                // left
+                // branch up
+                isEnd = branch(currentCell, currentCell.i - 1, currentCell.j, ref cellL);
+                if (isEnd)
+                    break;
 
-                // down
+                // branch down
+                isEnd = branch(currentCell, currentCell.i + 1, currentCell.j, ref cellL);
+                if (isEnd)
+                    break;
 
+                // branch left
+                isEnd = branch(currentCell, currentCell.i, currentCell.j - 1, ref cellL);
+                if (isEnd)
+                    break;
+
+                // branch right
+                isEnd = branch(currentCell, currentCell.i, currentCell.j + 1, ref cellL);
+                if (isEnd)
+                    break;
+
+                pos++;
+            }
+
+            getCellPath(cellL);
+        }
+
+        bool branch(Cell currentCell, int nextI, int nextJ, ref List<Cell> cellL)
+        {
+            if (isValidCell(nextI, nextJ))
+            {
+                // pushing next cell to branch from in queue
+                cellL.Add(cMaze[nextI, nextJ]);
+
+                // updates visited and remembers the previous cell it branched from
+                cMaze[nextI, nextJ].visited = true;
+                cMaze[nextI, nextJ].prevCell_i = currentCell.i;
+                cMaze[nextI, nextJ].prevCell_j = currentCell.j;
+
+                // check if end is found
+                if (cMaze[nextI, nextJ].isEnd)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+
+        // uses end cell and previous cell coordinates variable to map out the solution
+        //      *stored as List<Cell>*
+        void getCellPath(List<Cell> cellL)
+        {
+            List<Cell> solvedPath = new List<Cell>();
+            Cell currentCell = cellL[cellL.Count - 1];
+
+            while (!currentCell.isStart)
+            {
+                solvedPath.Add(currentCell);
+                currentCell = cMaze[currentCell.prevCell_i, currentCell.prevCell_j];
+            }
+
+            solvedPath.Add(currentCell);
+            solvedPath.Reverse();
+
+            pathSolution = solvedPath;
+            updateMazeSolved();
+        }
+
+        // sets pathFound variable in cMaze array using path solution. 
+        void updateMazeSolved()
+        {
+            Console.WriteLine(pathSolution.Count);
+            for (int i = 0; i < pathSolution.Count; i++)
+            {
+                cMaze[pathSolution[i].i, pathSolution[i].j].pathFound = true;
             }
         }
+
+
     }
 }
