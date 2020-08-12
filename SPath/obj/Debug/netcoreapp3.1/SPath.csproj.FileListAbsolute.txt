@@ -37,3 +37,4 @@ C:\Users\noahs\Documents\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPa
 C:\Users\noahs\Documents\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.dll
 C:\Users\noahs\Documents\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.pdb
 C:\Users\noahs\Documents\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.genruntimeconfig.cache
+C:\Users\noahs\Documents\git_repos\pathFinding\SPath\obj\Debug\netcoreapp3.1\SPath.csproj.ResolveComReference.cache
